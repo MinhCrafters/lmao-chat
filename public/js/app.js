@@ -17,7 +17,6 @@ var socket = io();
 $(document).ready(function() {
     setTimeout(function() {
         $("body").addClass("loaded");
-        $("h1").css("color", "#bbdefb");
     }, 2000);
 });
 
