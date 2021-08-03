@@ -26,17 +26,22 @@
 }
 
 body {
-	font-family: bold, thin;
+	font-family: thin;
 	color: var(--primary-text);
 }
 
-* {
-	font-family: bold, thin;
+h1 {
+	font-family: bold;
+}
+
+input {
+	font-family: thin;
 }
 
 p {
 	word-wrap: break-word;
 	word-break: break-all;
+	font-family: thin;
 }
 
 input {
