@@ -22,7 +22,8 @@ body {
 }
 
 p {
-	word-wrap: normal;
+	word-wrap: break-word;
+	word-break: break-all;
 }
 
 /* Helper Classes */
