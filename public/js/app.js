@@ -17,15 +17,11 @@ var socket = io();
 const wait = (delay = 0) =>
     new Promise(resolve => setTimeout(resolve, delay));
 
-document.onreadystatechange = function() {
-    if (document.readyState !== "complete") {
-        document.fonts.ready.then(function() {
-            wait(1000).then(() => {
-                $("body").addClass("loaded");
-            })
-        });
-    }
-};
+$(document).ready(function() {
+    setTimeout(function() {
+        $("body").addClass("loaded");
+    }, 1000);
+});
 
 socket.on('message', message => {
     if (message.type !== messageTypes.LOGIN) {
@@ -56,7 +52,7 @@ createMessageHTML = message => {
 			<p class="flex-grow-1 message-author">${
 				message.type === messageTypes.LEFT ? message.author : ''
 			}</p>
-			<p class="message-date">${message.date}</p>
+			<p class="message-date" style="opacity:0.7;">${message.date}</p>
 		</div>
 		<p class="message-content">${message.content}</p>
 	</div>
@@ -109,6 +105,41 @@ sendBtn.addEventListener('click', e => {
     sendMessage(message);
 
     messageInput.value = '';
+});
+
+ele.addEventListener('keydown', function(e) {
+    const keyCode = e.which || e.keyCode;
+
+    if (keyCode === 13 && !e.shiftKey) {
+        e.preventDefault();
+        if (!messageInput.value) {
+            return console.log('Invalid input');
+        }
+
+        const date = new Date();
+        const month = ('0' + date.getMonth()).slice(0, 2);
+        const day = date.getDate();
+        const year = date.getFullYear();
+        let hour = date.getHours();
+        if (hour.length < 2) {
+            if (!hour.includes("0") || !hour.includes("1") || !hour.includes("2")) {
+                hour = ('0' + date.getHours());
+            }
+        }
+        const mins = date.getMinutes();
+        const dateString = `${hour}:${mins} - ${month}/${day}/${year}`;
+        const dateString1 = dateString.bold();
+
+        const message = {
+            author: username,
+            date: dateString1,
+            content: messageInput.value
+        };
+
+        sendMessage(message);
+
+        messageInput.value = '';
+    }
 });
 
 loginBtn.addEventListener('click', e => {

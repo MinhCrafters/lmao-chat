@@ -26,20 +26,7 @@
     background: #555;
 }
 
-#loginBtn:after {
-    content: "";
-    background: #f1f1f1;
-    display: block;
-    position: absolute;
-    padding-top: 300%;
-    padding-left: 350%;
-    margin-left: -20px !important;
-    margin-top: -120%;
-    opacity: 0;
-    transition: all 0.8s;
-}
-
-#sendBtn:after {
+.run:after {
     content: "";
     background: #f1f1f1;
     display: block;
@@ -102,10 +89,14 @@ input {
     font-family: thin;
 }
 
-p {
+.message-date {
+    font-family: thin;
+}
+
+.message-content {
     word-wrap: break-word;
     word-break: break-all;
-    font-family: thin;
+    font-family: bold;
 }
 
 input {
