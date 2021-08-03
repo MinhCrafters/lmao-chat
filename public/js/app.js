@@ -85,7 +85,12 @@ sendBtn.addEventListener('click', e => {
     const month = ('0' + date.getMonth()).slice(0, 2);
     const day = date.getDate();
     const year = date.getFullYear();
-    const hour = date.getHours();
+    let hour = date.getHours();
+    if (hour.length < 2) {
+        if (!hour.includes("0") || !hour.includes("1") || !hour.includes("2")) {
+            hour = ('0' + date.getHours());
+        }
+    }
     const mins = date.getMinutes();
     const dateString = `${hour}:${mins} - ${month}/${day}/${year}`;
 
