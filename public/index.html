@@ -9,17 +9,16 @@
 	<link rel="stylesheet" href="app.css">
 </head>
 
-<body>
+<body onload="loadingScreen()">
+	<div id="loader"></div>
 
-	<div id="appContainer" class="flex-column">
-
+	<div id="appContainer" class="flex-column animate-bottom" style="display:none;">
 		<header>
 			<div class="container flex-column flex-center">
 				<h1>LMAO Chat</h1>
 				<p class="light-text">The easiest way to roll by MinhCrafters.</p>
 			</div>
 		</header>
-
 		<div id="mainContent" class="container flex-grow-1 flex-column ">
 
 			<section id="login" class="">
@@ -39,12 +38,8 @@
 					<button id="sendBtn">Send</button>
 				</form>
 			</section>
-
-
-
 		</div>
 	</div>
-	<div id="loading"></div>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.0/socket.io.js"></script>
 	<script src="app.js "></script>

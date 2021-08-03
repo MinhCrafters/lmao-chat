@@ -14,23 +14,16 @@ const messages = [];
 
 var socket = io();
 
-function onReady(callback) {
-  var intervalId = window.setInterval(function() {
-    if (document.getElementsByTagName('body')[0] !== undefined) {
-      window.clearInterval(intervalId);
-      callback.call(this);
-    }
-  }, 1000);
+var time;
+
+function loadingScreen() {
+  time = setTimeout(showPage, 3000);
 }
 
-function setVisible(selector, visible) {
-  document.querySelector(selector).style.display = visible ? 'block' : 'none';
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("appContainer").style.display = "block";
 }
-
-onReady(function() {
-  setVisible('.page', true);
-  setVisible('#loading', false);
-});
 
 socket.on('message', message => {
 	if (message.type !== messageTypes.LOGIN) {
