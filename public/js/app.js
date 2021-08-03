@@ -14,9 +14,6 @@ const messages = [];
 
 var socket = io();
 
-const wait = (delay = 0) =>
-    new Promise(resolve => setTimeout(resolve, delay));
-
 $(document).ready(function() {
     setTimeout(function() {
         $("body").addClass("loaded");
@@ -52,7 +49,7 @@ createMessageHTML = message => {
 			<p class="flex-grow-1 message-author">${
 				message.type === messageTypes.LEFT ? message.author : ''
 			}</p>
-			<p class="message-date" style="opacity:0.7;">${message.date}</p>
+			<p class="message-date">${message.date}</p>
 		</div>
 		<p class="message-content">${message.content}</p>
 	</div>
