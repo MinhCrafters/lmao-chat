@@ -85,6 +85,10 @@
     font-family: bold;
 }
 
+#messageInput {
+    font-family: bold;
+}
+
 body {
     font-family: thin;
     color: var(--primary-text);
