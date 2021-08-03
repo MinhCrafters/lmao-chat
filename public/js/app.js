@@ -104,7 +104,7 @@ sendBtn.addEventListener('click', e => {
     messageInput.value = '';
 });
 
-ele.addEventListener('keydown', function(e) {
+messageInput.addEventListener('keydown', function(e) {
     const keyCode = e.which || e.keyCode;
 
     if (keyCode === 13 && !e.shiftKey) {
