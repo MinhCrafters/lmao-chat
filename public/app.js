@@ -39,7 +39,7 @@ createMessageHTML = message => {
 		return `
 			<p class="secondary-text text-center mb-2">${
 				message.author
-			} joined the chat...</p>
+			} joined the chat!</p>
 		`;
 	}
 	return `
@@ -74,7 +74,9 @@ sendBtn.addEventListener('click', e => {
 	const month = ('0' + date.getMonth()).slice(0, 2);
 	const day = date.getDate();
 	const year = date.getFullYear();
-	const dateString = `${month}/${day}/${year}`;
+	const hour = date.getHours();
+	const mins = date.getMinutes();
+	const dateString = `${month}/${day}/${year} ${hour}:${mins}`;
 
 	const message = {
 		author: username,
