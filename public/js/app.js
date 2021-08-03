@@ -20,7 +20,7 @@ const wait = (delay = 0) =>
 $(document).ready(function() {
     setTimeout(function() {
         $("body").addClass("loaded");
-    }, 1000);
+    }, 3000);
 });
 
 socket.on('message', message => {
