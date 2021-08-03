@@ -215,6 +215,13 @@ button {
     background-color: var(--primary-blue);
     color: white;
     border: none;
+    text-align: center;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
 }
 
 
