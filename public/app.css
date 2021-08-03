@@ -16,13 +16,13 @@
 
 @font-face {
   font-family: bold;
-  src: url(bold.otf);
+  src: url(bold.ttf);
   font-weight: bold;
 }
 
 @font-face {
   font-family: thin;
-  src: url(thin.otf);
+  src: url(thin.ttf);
 }
 
 body {
