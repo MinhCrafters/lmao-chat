@@ -76,7 +76,7 @@ sendBtn.addEventListener('click', e => {
 	const year = date.getFullYear();
 	const hour = date.getHours();
 	const mins = date.getMinutes();
-	const dateString = `${month}/${day}/${year} ${hour}:${mins}`;
+	const dateString = `${hour}:${mins} ${month}/${day}/${year}`;
 
 	const message = {
 		author: username,
