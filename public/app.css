@@ -30,6 +30,10 @@ body {
 	color: var(--primary-text);
 }
 
+* {
+	font-family: bold, thin;
+}
+
 p {
 	word-wrap: break-word;
 	word-break: break-all;
