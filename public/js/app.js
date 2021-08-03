@@ -38,9 +38,7 @@ socket.on('message', message => {
 createMessageHTML = message => {
     if (message.type === messageTypes.LOGIN) {
         return `
-			<p class="secondary-text text-center mb-2">${
-				message.author
-			} joined the chat!</p>
+			<p class="secondary-text text-center mb-2"><strong>${message.author}</strong> joined the chat!</p>
 		`;
     }
     return `
@@ -93,10 +91,11 @@ sendBtn.addEventListener('click', e => {
     }
     const mins = date.getMinutes();
     const dateString = `${hour}:${mins} - ${month}/${day}/${year}`;
+    const dateString1 = dateString.bold();
 
     const message = {
         author: username,
-        date: dateString,
+        date: dateString1,
         content: messageInput.value
     };
 

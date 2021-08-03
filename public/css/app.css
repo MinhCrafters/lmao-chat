@@ -8,12 +8,6 @@
     --light-gray: #bdbdbd;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -39,6 +33,24 @@
 @font-face {
     font-family: thin;
     src: url(/font/thin.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#sendBtn {
+    font-family: bold;
+}
+
+#loginBtn {
+    font-family: bold;
+}
+
+.text-center {
+    font-family: bold;
 }
 
 body {
