@@ -14,17 +14,6 @@ const messages = [];
 
 var socket = io();
 
-var time;
-
-function loadingScreen() {
-  time = setTimeout(showPage, 3000);
-}
-
-function showPage() {
-  document.getElementById("loader").style.display = "none";
-  document.getElementById("appContainer").style.display = "block";
-}
-
 socket.on('message', message => {
 	if (message.type !== messageTypes.LOGIN) {
 		if (message.author === username) {

@@ -2,47 +2,55 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>LMAO Chat</title>
-	<link rel="stylesheet" href="app.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LMAO Chat</title>
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 </head>
 
-<body onload="loadingScreen()" style="margin:0;">
-	<div id="loader"></div>
+<body>
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+    <div id="appContainer" class="flex-column animate-bottom" style="display:none;">
+        <header>
+            <div class="container flex-column flex-center">
+                <h1>LMAO Chat</h1>
+                <p class="light-text">The easiest way to roll by MinhCrafters.</p>
+            </div>
+        </header>
+        <div id="mainContent" class="container flex-grow-1 flex-column ">
 
-	<div id="appContainer" class="flex-column animate-bottom" style="display:none;">
-		<header>
-			<div class="container flex-column flex-center">
-				<h1>LMAO Chat</h1>
-				<p class="light-text">The easiest way to roll by MinhCrafters.</p>
-			</div>
-		</header>
-		<div id="mainContent" class="container flex-grow-1 flex-column ">
+            <section id="login" class="">
+                <h2 class="text-center">Choose a username</h2>
+                <form id="loginForm" class="flex">
+                    <input type="text" name="username " id="usernameInput" class="flex-grow-1">
+                    <button id="loginBtn">Login</button>
+                </form>
+            </section>
 
-			<section id="login" class="">
-				<h2 class="text-center">Get Started</h2>
-				<form id="loginForm" class="flex">
-					<input type="text" name="username " id="usernameInput" placeholder="username" class="flex-grow-1">
-					<button id="loginBtn">Login</button>
-				</form>
-			</section>
+            <section id="chat" class="flex-grow-1 flex-column hidden">
+                <div id="messagesList" class="flex-grow-1">
 
-			<section id="chat" class="flex-grow-1 flex-column hidden">
-				<div id="messagesList" class="flex-grow-1">
+                </div>
+                <form id="messageForm" class="flex">
+                    <input type="text" name="message " id="messageInput" class="flex-grow-1" maxlength="2000">
+                    <button id="sendBtn">Send</button>
+                </form>
+            </section>
+        </div>
+    </div>
 
-				</div>
-				<form id="messageForm" class="flex">
-					<input type="text" name="message " id="messageInput" class="flex-grow-1" maxlength="2000">
-					<button id="sendBtn">Send</button>
-				</form>
-			</section>
-		</div>
-	</div>
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.0/socket.io.js"></script>
-	<script src="app.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.0/socket.io.js"></script>
+    <script src="js/app.js"></script>
 </body>
 
 </html>
