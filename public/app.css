@@ -21,6 +21,10 @@ body {
 	color: var(--primary-text);
 }
 
+p {
+	word-wrap: normal;
+}
+
 /* Helper Classes */
 
 .flex {
