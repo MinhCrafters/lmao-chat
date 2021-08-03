@@ -17,16 +17,11 @@ var socket = io();
 const wait = (delay = 0) =>
     new Promise(resolve => setTimeout(resolve, delay));
 
-const setVisible = (elementOrSelector, visible) =>
-    (typeof elementOrSelector === 'string' ?
-        document.querySelector(elementOrSelector) :
-        elementOrSelector
-    ).style.display = visible ? 'block' : 'none';
-
 document.addEventListener('DOMContentLoaded', () =>
     wait(1000).then(() => {
         $("body").addClass("loaded");
-    }));
+    })
+);
 
 socket.on('message', message => {
     if (message.type !== messageTypes.LOGIN) {
