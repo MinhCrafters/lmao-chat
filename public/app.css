@@ -1,4 +1,3 @@
-/* Variabls */
 :root {
 	--primary-blue: #2196f3;
 	--dark-blue: #1976d2;
@@ -9,15 +8,25 @@
 	--light-gray: #bdbdbd;
 }
 
-/* Resets */
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
 
+@font-face {
+  font-family: bold;
+  src: url(bold.otf);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: thin;
+  src: url(thin.otf);
+}
+
 body {
-	font-family: Helvetica, sans-serifs;
+	font-family: bold, thin;
 	color: var(--primary-text);
 }
 
@@ -26,7 +35,9 @@ p {
 	word-break: break-all;
 }
 
-/* Helper Classes */
+input {
+	overflow-wrap: break-word;
+}
 
 .flex {
 	display: flex;
