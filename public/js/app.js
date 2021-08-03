@@ -19,9 +19,11 @@ const wait = (delay = 0) =>
 
 document.onreadystatechange = function() {
     if (document.readyState !== "complete") {
-        wait(1000).then(() => {
-            $("body").addClass("loaded");
-        })
+        document.fonts.ready.then(function() {
+            wait(1000).then(() => {
+                $("body").addClass("loaded");
+            })
+        });
     }
 };
 
