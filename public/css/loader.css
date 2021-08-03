@@ -170,7 +170,3 @@ h1 {
 .no-js #loader-wrapper {
     display: none;
 }
-
-.no-js h1 {
-    color: #222222;
-}
