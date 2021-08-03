@@ -17,11 +17,13 @@ var socket = io();
 const wait = (delay = 0) =>
     new Promise(resolve => setTimeout(resolve, delay));
 
-document.addEventListener('DOMContentLoaded', () =>
-    wait(1000).then(() => {
-        $("body").addClass("loaded");
-    })
-);
+document.onreadystatechange = function() {
+    if (document.readyState !== "complete") {
+        wait(1000).then(() => {
+            $("body").addClass("loaded");
+        })
+    }
+};
 
 socket.on('message', message => {
     if (message.type !== messageTypes.LOGIN) {
