@@ -104,41 +104,6 @@ sendBtn.addEventListener('click', e => {
     messageInput.value = '';
 });
 
-messageInput.addEventListener('keydown', function(e) {
-    const keyCode = e.which || e.keyCode;
-
-    if (keyCode === 13 && !e.shiftKey) {
-        e.preventDefault();
-        if (!messageInput.value) {
-            return console.log('Invalid input');
-        }
-
-        const date = new Date();
-        const month = ('0' + date.getMonth()).slice(0, 2);
-        const day = date.getDate();
-        const year = date.getFullYear();
-        let hour = date.getHours();
-        if (hour.length < 2) {
-            if (!hour.includes("0") || !hour.includes("1") || !hour.includes("2")) {
-                hour = ('0' + date.getHours());
-            }
-        }
-        const mins = date.getMinutes();
-        const dateString = `${hour}:${mins} - ${month}/${day}/${year}`;
-        const dateString1 = dateString.bold();
-
-        const message = {
-            author: username,
-            date: dateString1,
-            content: messageInput.value
-        };
-
-        sendMessage(message);
-
-        messageInput.value = '';
-    }
-});
-
 loginBtn.addEventListener('click', e => {
     e.preventDefault();
     if (!usernameInput.value) {
