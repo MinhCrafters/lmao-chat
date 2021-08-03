@@ -26,7 +26,7 @@
     background: #555;
 }
 
-.loginBtn:after {
+#loginBtn:after {
     content: "";
     background: #f1f1f1;
     display: block;
@@ -39,7 +39,7 @@
     transition: all 0.8s;
 }
 
-.sendBtn:after {
+#sendBtn:after {
     content: "";
     background: #f1f1f1;
     display: block;
