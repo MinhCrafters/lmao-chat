@@ -70,10 +70,6 @@ h1 {
     font-family: bold;
 }
 
-.message-date {
-    font-family: thin;
-}
-
 .button:after {
     content: "";
     background: #ffffff;

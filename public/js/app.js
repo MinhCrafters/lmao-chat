@@ -58,7 +58,7 @@ createMessageHTML = message => {
 			<p class="flex-grow-1 message-author">${
 				message.type === messageTypes.LEFT ? message.author : ''
 			}</p>
-			<p class="message-date">${message.date}</p>
+			<p class="message-date" style="font-weight: bold;">${message.date}</p>
 		</div>
 		<p class="message-content">${message.content}</p>
 	</div>
@@ -85,11 +85,10 @@ sendBtn.addEventListener('click', e => {
     const hour = ('0' + date.getHours()).slice(-2);
     const mins = ('0' + date.getMinutes()).slice(-2);
     const dateString = `${hour}:${mins} - ${day}/${month}/${year}`;
-    const dateString1 = dateString.bold();
 
     const message = {
         author: username,
-        date: dateString1,
+        date: dateString,
         content: messageInput.value
     };
 
