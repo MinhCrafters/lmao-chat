@@ -71,11 +71,11 @@ sendBtn.addEventListener('click', e => {
 
     const date = new Date();
     const month = ('0' + date.getMonth()).slice(0, 2);
-    const day = date.getDate();
+    const day = ('0' + date.getDate()).slice(-2);
     const year = date.getFullYear();
     const hour = ('0' + date.getHours()).slice(-2);
     const mins = ('0' + date.getMinutes()).slice(-2);
-    const dateString = `${hour}:${mins} - ${month}/${day}/${year}`;
+    const dateString = `${hour}:${mins} - ${day}/${month}/${year}`;
     const dateString1 = dateString.bold();
 
     const message = {
