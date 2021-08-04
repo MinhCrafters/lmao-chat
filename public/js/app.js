@@ -20,6 +20,15 @@ $(document).ready(function() {
     }, 3000);
 });
 
+$('form').on('focus', 'input[type=text]', function(e) {
+    $(this).on('wheel.disableScroll', function(e) {
+        e.preventDefault()
+    })
+})
+$('form').on('blur', 'input[type=text]', function(e) {
+    $(this).off('wheel.disableScroll')
+})
+
 socket.on('message', message => {
     if (message.type !== messageTypes.LOGIN) {
         if (message.author === username) {
